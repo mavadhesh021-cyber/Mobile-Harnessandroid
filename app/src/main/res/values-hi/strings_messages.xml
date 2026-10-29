@@ -122,7 +122,6 @@
     <string name="vm_attach_failed">फ़ाइल अटैच नहीं हो सकी</string>
     <string name="vm_attachment_unavailable">अटैचमेंट उपलब्ध नहीं है</string>
     <string name="vm_no_app_for_attachment">कोई ऐप यह अटैचमेंट नहीं खोल सकता</string>
-    <string name="vm_attachment_unsupported_type">केवल इमेज और टेक्स्ट फ़ाइलें समर्थित हैं</string>
     <string name="vm_attachment_too_large">%1$s 25 MB से बड़ा है</string>
     <string name="vm_unsafe_attachment_folder">असुरक्षित अटैचमेंट फ़ोल्डर</string>
     <string name="vm_read_named_failed">%1$s पढ़ा नहीं जा सका</string>

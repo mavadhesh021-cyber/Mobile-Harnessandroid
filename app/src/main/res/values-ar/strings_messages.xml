@@ -122,7 +122,6 @@
     <string name="vm_attach_failed">تعذّر إرفاق الملف</string>
     <string name="vm_attachment_unavailable">المرفق غير متاح</string>
     <string name="vm_no_app_for_attachment">لا يوجد تطبيق يمكنه فتح هذا المرفق</string>
-    <string name="vm_attachment_unsupported_type">الصور والملفات النصية فقط مدعومة</string>
     <string name="vm_attachment_too_large">حجم %1$s أكبر من 25 ميغابايت</string>
     <string name="vm_unsafe_attachment_folder">مجلد مرفقات غير آمن</string>
     <string name="vm_read_named_failed">تعذّرت قراءة %1$s</string>

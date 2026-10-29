@@ -122,7 +122,6 @@
     <string name="vm_attach_failed">Could not attach file</string>
     <string name="vm_attachment_unavailable">Attachment is unavailable</string>
     <string name="vm_no_app_for_attachment">No app can open this attachment</string>
-    <string name="vm_attachment_unsupported_type">Only images and text files are supported</string>
     <string name="vm_attachment_too_large">%1$s is larger than 25 MB</string>
     <string name="vm_unsafe_attachment_folder">Unsafe attachment folder</string>
     <string name="vm_read_named_failed">Could not read %1$s</string>

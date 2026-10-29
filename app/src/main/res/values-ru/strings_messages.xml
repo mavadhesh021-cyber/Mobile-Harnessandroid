@@ -122,7 +122,6 @@
     <string name="vm_attach_failed">Не удалось прикрепить файл</string>
     <string name="vm_attachment_unavailable">Вложение недоступно</string>
     <string name="vm_no_app_for_attachment">Нет приложения, которое может открыть это вложение</string>
-    <string name="vm_attachment_unsupported_type">Поддерживаются только изображения и текстовые файлы</string>
     <string name="vm_attachment_too_large">%1$s больше 25 МБ</string>
     <string name="vm_unsafe_attachment_folder">Небезопасная папка вложений</string>
     <string name="vm_read_named_failed">Не удалось прочитать %1$s</string>

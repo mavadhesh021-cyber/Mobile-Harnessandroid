@@ -122,7 +122,6 @@
     <string name="vm_attach_failed">No se pudo adjuntar el archivo</string>
     <string name="vm_attachment_unavailable">El adjunto no está disponible</string>
     <string name="vm_no_app_for_attachment">Ninguna app puede abrir este adjunto</string>
-    <string name="vm_attachment_unsupported_type">Solo se admiten imágenes y archivos de texto</string>
     <string name="vm_attachment_too_large">%1$s supera los 25 MB</string>
     <string name="vm_unsafe_attachment_folder">Carpeta de adjuntos no segura</string>
     <string name="vm_read_named_failed">No se pudo leer %1$s</string>

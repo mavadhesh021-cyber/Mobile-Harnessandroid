@@ -122,6 +122,7 @@ import androidx.compose.material.icons.filled.DriveFileRenameOutline
 import androidx.compose.material.icons.filled.NoteAdd
 import androidx.compose.material.icons.filled.Upload
 import androidx.compose.material.icons.filled.PhotoCamera
+import androidx.compose.material.icons.filled.PictureAsPdf
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.BatterySaver
 import androidx.compose.material.icons.filled.PlayArrow
@@ -4681,7 +4682,7 @@ private fun WorkspaceScreen(
                     agentKind = state.agentKind,
                     pendingAttachments = state.pendingAttachments,
                     onAttach = {
-                        attachmentLauncher.launch(arrayOf("image/*", "text/*", "application/json", "application/xml"))
+                        attachmentLauncher.launch(arrayOf("*/*"))
                     },
                     onTakePhoto = {
                         runCatching {
@@ -6969,14 +6970,24 @@ private fun MessageBubble(message: ChatMessage, onRunInTerminal: (String) -> Uni
     }
 }
 
+private val CODE_EXTENSIONS = setOf(
+    "txt", "md", "markdown", "json", "jsonl", "csv", "tsv", "xml", "yaml", "yml", "log",
+    "kt", "kts", "java", "py", "js", "mjs", "cjs", "ts", "tsx", "jsx", "html", "htm",
+    "css", "scss", "sass", "less", "c", "cc", "cpp", "h", "hpp", "sh", "bash", "zsh",
+    "gradle", "properties", "toml", "ini", "conf", "sql",
+)
+
 @Composable
 private fun AttachmentChip(
     attachment: ChatAttachment,
     onOpen: (() -> Unit)?,
     onRemove: (() -> Unit)?,
 ) {
+    val extension = attachment.displayName.substringAfterLast('.', "").lowercase()
     val icon = when {
         attachment.mimeType.startsWith("image/") -> Icons.Default.Image
+        attachment.mimeType == "application/pdf" || extension == "pdf" -> Icons.Default.PictureAsPdf
+        extension in CODE_EXTENSIONS -> Icons.Default.Code
         else -> Icons.Default.Description
     }
     Surface(

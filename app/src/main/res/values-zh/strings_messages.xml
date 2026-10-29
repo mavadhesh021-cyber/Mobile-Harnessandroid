@@ -122,7 +122,6 @@
     <string name="vm_attach_failed">无法附加文件</string>
     <string name="vm_attachment_unavailable">附件不可用</string>
     <string name="vm_no_app_for_attachment">没有可以打开此附件的应用</string>
-    <string name="vm_attachment_unsupported_type">仅支持图片和文本文件</string>
     <string name="vm_attachment_too_large">%1$s 大于 25 MB</string>
     <string name="vm_unsafe_attachment_folder">不安全的附件文件夹</string>
     <string name="vm_read_named_failed">无法读取 %1$s</string>
