@@ -4533,6 +4533,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    fun attachmentFile(attachment: ChatAttachment): File? {
+        val project = _state.value.activeProject ?: return null
+        return File(projectWorkspaceRoot(project), attachment.relativePath)
+    }
+
     fun addChatAttachments(uris: List<Uri>) {
         val current = _state.value
         val project = current.activeProject ?: return

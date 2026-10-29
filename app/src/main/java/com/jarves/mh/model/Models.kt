@@ -135,7 +135,7 @@ fun providerProtocolForAgent(profile: ProviderProfile, agent: AgentKind): Provid
 /** Provider choices shown for the selected coding agent. */
 fun providersForAgent(agent: AgentKind): List<ProviderKind> = when (agent) {
     AgentKind.DEEPSEEK_HARNESS -> ProviderKind.entries.filter { it in DEEPSEEK_HARNESS_PROVIDERS }
-    AgentKind.CLAUDE_CODE -> ProviderKind.entries.filterNot { it == ProviderKind.OPENCODE_ZEN }
+    AgentKind.CLAUDE_CODE -> ProviderKind.entries.filterNot { it == ProviderKind.ANTIGRAVITY }
     AgentKind.ANTIGRAVITY -> emptyList()
 }
 

@@ -6351,6 +6351,7 @@ private fun ChatTab(
                                 attachment = attachment,
                                 onOpen = null,
                                 onRemove = { onRemoveAttachment(attachment.id) },
+                                previewModel = viewModel.attachmentFile(attachment),
                             )
                         }
                     }
@@ -6960,7 +6961,7 @@ private fun MessageBubble(message: ChatMessage, onRunInTerminal: (String) -> Uni
                         verticalArrangement = Arrangement.spacedBy(6.dp),
                     ) {
                         message.attachments.forEach { attachment ->
-                            AttachmentChip(attachment = attachment, onOpen = { onOpenAttachment(attachment) }, onRemove = null)
+                            AttachmentChip(attachment = attachment, onOpen = { onOpenAttachment(attachment) }, onRemove = null, previewModel = viewModel.attachmentFile(attachment))
                         }
                     }
                 }
@@ -6982,6 +6983,7 @@ private fun AttachmentChip(
     attachment: ChatAttachment,
     onOpen: (() -> Unit)?,
     onRemove: (() -> Unit)?,
+    previewModel: Any? = null,
 ) {
     val extension = attachment.displayName.substringAfterLast('.', "").lowercase()
     val icon = when {
@@ -6997,7 +6999,16 @@ private fun AttachmentChip(
         border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
     ) {
         Row(Modifier.padding(start = 9.dp, end = if (onRemove == null) 10.dp else 3.dp, top = 7.dp, bottom = 7.dp), verticalAlignment = Alignment.CenterVertically) {
-            Icon(icon, null, Modifier.size(17.dp), tint = PocketOrange)
+            if (attachment.mimeType.startsWith("image/") && previewModel != null) {
+                coil.compose.AsyncImage(
+                    model = previewModel,
+                    contentDescription = attachment.displayName,
+                    contentScale = androidx.compose.ui.layout.ContentScale.Crop,
+                    modifier = Modifier.size(34.dp).clip(RoundedCornerShape(6.dp)),
+                )
+            } else {
+                Icon(icon, null, Modifier.size(17.dp), tint = PocketOrange)
+            }
             Spacer(Modifier.width(7.dp))
             Column(Modifier.widthIn(max = 180.dp)) {
                 Text(attachment.displayName, fontSize = 12.sp, fontWeight = FontWeight.Medium, maxLines = 1, overflow = TextOverflow.Ellipsis)
