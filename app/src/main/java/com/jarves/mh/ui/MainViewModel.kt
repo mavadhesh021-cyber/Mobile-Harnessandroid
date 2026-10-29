@@ -4644,6 +4644,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             relativePath = destination.relativeTo(root).invariantSeparatorsPath,
             mimeType = mimeType,
             sizeBytes = copied,
+            absolutePath = destination.absolutePath,
         )
     }
 

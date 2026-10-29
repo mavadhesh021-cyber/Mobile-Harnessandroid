@@ -348,6 +348,7 @@ data class ChatAttachment(
     val relativePath: String,
     val mimeType: String,
     val sizeBytes: Long,
+    val absolutePath: String = "",
 )
 
 data class ProjectChat(
